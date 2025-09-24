@@ -1,22 +1,15 @@
-// Define a base abstract class HorrorCharacter with the following attributes and methods:
-//  - void attack() - Basic attack action.
-//  - void flee() - Action when the character flees from danger.
-//  - Vulnerability[] getVulnerabilities() - Return the vulnerabilities of the character.
-//
-//  - String name
-//  - int health
-//  - Vulnerability[] vulnerabilities
+package model;
 
 public abstract class HorrorCharacter {
 
-    protected String name;
-    protected int health;
-    protected Vulnerability[] vulnerabilities;
+    public String name;
+    public int health;
+    public Vulnerability[] vulnerabilities;
 
-    public HorrorCharacter(String name, int health, Vulnerability[] vulnerabilities) {
+    public HorrorCharacter(String name, int health) {
         this.name = name;
         this.health = health;
-        this.vulnerabilities = vulnerabilities;
+        vulnerabilities = Vulnerability.values();
     }
 
     public abstract void attack();
@@ -31,11 +24,7 @@ public abstract class HorrorCharacter {
         return name;
     }
 
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
+    public String getHealth() {
+        return Integer.toString(health);
     }
 }

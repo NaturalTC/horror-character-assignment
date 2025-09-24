@@ -1,11 +1,12 @@
-import Interfaces.Transformable;
+package model;
+
+import interfaces.Transformable;
 
 public class Zombie extends HorrorCharacter implements Transformable {
 
-    public Zombie(String name, int health, Vulnerability[] vulnerabilities) {
-        super(name, health, vulnerabilities);
+    public Zombie(String name, int health) {
+        super(name, health);
     }
-
 
     @Override
     public void attack() {
@@ -20,6 +21,5 @@ public class Zombie extends HorrorCharacter implements Transformable {
     @Override
     public void transform() {
         System.out.println(name + " transforms into a mindless zombie!");
-        // Change attack behavior when transformed
     }
 }

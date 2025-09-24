@@ -1,14 +1,11 @@
-// Create three subclasses: Vampire, Zombie, and Werewolf, that extend the HorrorCharacter class. Feel free to add others if you choose.
-//  - Provide a unique implementation for the attack() and flee() methods.
-//  - Have vulnerabilities based on the Vulnerability enum (e.g., a Vampire might be vulnerable to SUNLIGHT and HOLY_WATER, while a Zombie might be vulnerable to FIRE and HOLY_WATER).
-//  - Include unique behavior in the attack() method (e.g., a Vampire could bite its victim, a Zombie could lunge, etc.).
+package model;
 
-import Interfaces.Transformable;
+import interfaces.Transformable;
 
 public class Vampire extends HorrorCharacter implements Transformable {
 
-    public Vampire(String name, int health, Vulnerability[] vulnerabilities) {
-        super(name, health, vulnerabilities);
+    public Vampire(String name, int health) {
+        super(name, health);
     }
 
     @Override
@@ -23,6 +20,12 @@ public class Vampire extends HorrorCharacter implements Transformable {
 
     @Override
     public void transform() {
-        System.out.println(name + " transforms into a bat!");
+        if (health <= 0) {
+            System.out.println(name + " is too weak to transform.");
+        } else {
+            System.out.println(name + " transforms into a bat!");
+            name = "Bat-" + name;
+            health = health - 10;
+        }
     }
 }

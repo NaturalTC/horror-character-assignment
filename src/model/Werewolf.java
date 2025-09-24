@@ -1,11 +1,12 @@
-import Interfaces.Transformable;
+package model;
+
+import interfaces.Transformable;
 
 public class Werewolf extends HorrorCharacter implements Transformable {
 
-    public Werewolf(String name, int health, Vulnerability[] vulnerabilities) {
-        super(name, health, vulnerabilities);
+    public Werewolf(String name, int health) {
+        super(name, health);
     }
-
 
     @Override
     public void attack() {
