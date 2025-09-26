@@ -7,6 +7,7 @@ Name  : Jose Jimenez
 Date  : 09 22 2025
 Class : Prog Design
 Problem  : Assignment #1
+Repo : https://github.com/NaturalTC/HorrorCharacterApp.git
  */
 
 public class HorrorCharacterApp {
