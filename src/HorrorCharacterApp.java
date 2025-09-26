@@ -70,11 +70,14 @@ public class HorrorCharacterApp {
         /**
         * My test application to demonstrate the HorrorCharacter hierarchy and polymorphism.
         */
+
+        // Create a list of horror characters
         List<HorrorCharacter> horrorList = new ArrayList<>();
         horrorList.add(new Vampire("Alucard", 80, 30));
         horrorList.add(new Werewolf("Fenrir", 90, 25));
         horrorList.add(new Zombie("Walker", 70, 0));
 
+        // Demonstrate polymorphism and method overriding
         System.out.println("\nDemonstrating inheritance:\n");
         for (HorrorCharacter hc : horrorList) {
             System.out.println(hc.getName() + " attacks:");
