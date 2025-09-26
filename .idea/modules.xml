@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HorrorCharacterAssignment.iml" filepath="$PROJECT_DIR$/HorrorCharacterAssignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javadoc/HorrorCharacterAssignment.iml" filepath="$PROJECT_DIR$/javadoc/HorrorCharacterAssignment.iml" />
     </modules>
   </component>
 </project>
