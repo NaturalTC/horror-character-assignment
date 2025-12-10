@@ -25,11 +25,12 @@ public class Zombie extends HorrorCharacter {
 
     /**
      * Attack method for the zombie.
-     * Zombies attack by eating the brains of their victims.
+     * Zombies attack by using a lazer gun cause why not.
      */
     @Override
-    public void attack() {
-        System.out.println(getName() + "\n");
+    public void attack()
+    {
+        System.out.printf("%s started shooting a lazer gun!\n", getName());
     }
 
     /**
@@ -38,7 +39,8 @@ public class Zombie extends HorrorCharacter {
      */
     @Override
     public void flee() {
-        System.out.println(getName() + " is unable to flee!\n");
+
+        System.out.printf("%s is unable to flee!\n", getName());
     }
 
 }
