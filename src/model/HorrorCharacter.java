@@ -44,7 +44,8 @@ public abstract class HorrorCharacter {
      * Returns the vulnerabilities of the character.
      * @return Array of Vulnerability enums.
      */
-    public Vulnerability[] getVulnerabilities() {
+    public Vulnerability[] getVulnerabilities()
+    {
         return vulnerabilities;
     }
 
@@ -52,7 +53,8 @@ public abstract class HorrorCharacter {
      * Sets the vulnerabilities of the character.
      * @param vulnerabilities Array of Vulnerability enums.
      */
-    public void setVulnerabilities(Vulnerability[] vulnerabilities) {
+    public void setVulnerabilities(Vulnerability[] vulnerabilities)
+    {
         this.vulnerabilities = vulnerabilities;
     }
 
@@ -61,7 +63,8 @@ public abstract class HorrorCharacter {
      * Returns the name of the character.
      * @return Name of the character.
      */
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
@@ -69,7 +72,8 @@ public abstract class HorrorCharacter {
      * Returns the current health of the character.
      * @return Current health value.
      */
-    public int getHealth() {
+    public int getHealth()
+    {
         return health;
     }
 
@@ -77,7 +81,8 @@ public abstract class HorrorCharacter {
      * Returns the current mana of the character.
      * @return Current mana value.
      */
-    public int getMana() {
+    public int getMana()
+    {
         return mana;
     }
 
@@ -85,7 +90,8 @@ public abstract class HorrorCharacter {
      * Sets the mana of the character.
      * @param mana New mana value.
      */
-    public void setMana(int mana) {
+    public void setMana(int mana)
+    {
         this.mana = mana;
     }
 
@@ -93,7 +99,8 @@ public abstract class HorrorCharacter {
      * Sets the name of the character.
      * @param name New name for the character.
      */
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
@@ -101,13 +108,13 @@ public abstract class HorrorCharacter {
      * Sets the health of the character.
      * @param health New health value.
      */
-    public void setHealth(int health) {
+    public void setHealth(int health)
+    {
         this.health = health;
     }
 
     /**
      * Apply damage to this character, reducing health.
-     *
      * @param damage Amount of damage to take.
      */
     public void takeDamage(int damage) {

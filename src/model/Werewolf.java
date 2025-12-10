@@ -6,7 +6,8 @@ import interfaces.Transformable;
  * Werewolf class, a type of HorrorCharacter that can transform into a human.
  * Werewolves are vulnerable to sunlight and silver.
  */
-public class Werewolf extends HorrorCharacter implements Transformable {
+public class Werewolf extends HorrorCharacter implements Transformable
+{
 
     // State to track transformation
     private boolean transformed = false;
@@ -17,7 +18,8 @@ public class Werewolf extends HorrorCharacter implements Transformable {
      * @param health health of the werewolf
      * @param mana mana of the werewolf
      */
-    public Werewolf(String name, int health, int mana) {
+    public Werewolf(String name, int health, int mana)
+    {
         super(name, health, mana);
 
         // Werewolves are vulnerable to sunlight and silver
@@ -31,11 +33,12 @@ public class Werewolf extends HorrorCharacter implements Transformable {
      * Attack method, behavior changes based on transformation state.
      */
     @Override
-    public void attack() {
+    public void attack()
+    {
         if (transformed) {
-            System.out.println(getName() + " throws a weak human punch!\n");
+            System.out.printf("%s throws a weak human punch!\n", getName());
         } else {
-            System.out.println(getName() + " jumps onto enemy and maws them!\n");
+            System.out.printf("%s jumps onto enemy and maws them!\n", getName());
         }
     }
 
@@ -43,32 +46,29 @@ public class Werewolf extends HorrorCharacter implements Transformable {
      * Flee method
      */
     @Override
-    public void flee() {
-        System.out.println(getName() + " evades the conflict!\n");
+    public void flee()
+    {
+        System.out.printf("%s evades the conflict!\n", getName());
     }
 
     /**
-     * Transform method, toggles between werewolf and human forms.
-     * Transforming into a human reduces health by 30, transforming back restores 30 health
-     * if health is above 0.
-     * If health is 0 or below, transformation is not possible.
+     * Transform method, turn into werewolf
+     * Transforming into a werewolf give you 69 health, transforming back subtracts 69 health
+     * If health is 0 or below, transformation is not possible because your dead mate
      */
     @Override
-    public void transform() {
+    public void transform()
+    {
         if (getHealth() <= 0) {
-            System.out.println(getName() + " you are dead! You cannot transform.\n");
+            System.out.printf("%s you are dead! You cannot transform.\n", getName());
         } else if (transformed) {
-            System.out.println(getName() + " is transformed back into a werewolf!\n");
-            setName(getName().replace("Human Form - ", ""));
-            setHealth(getHealth() + 30);
+            System.out.printf("%s transformed back into normal form!\n", getName());
+            setHealth(getHealth() - 69);
             transformed = false;
         } else {
-            System.out.println(getName() + " transforms into a human!\n");
-            setName("Human Form - " + getName());
-            setHealth(getHealth() - 30);
+            System.out.printf("%s is transformed into a werewolf!\n", getName());
+            setHealth(getHealth() + 69);
             transformed = true;
         }
     }
-
-
 }

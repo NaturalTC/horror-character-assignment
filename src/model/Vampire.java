@@ -49,24 +49,22 @@ public class Vampire extends HorrorCharacter implements Transformable {
     }
 
     /**
-     * Transform method, toggles between vampire and bat forms.
-     * Transforming into a bat reduces health by 10, transforming back restores 10 health
-     * if health is above 0.
+     * Transform method, turn into flight form
+     * Transforming into a flight form subtracts 69 health, transforming back adds 69 health
      * If health is 0 or below, transformation is not possible.
      */
     @Override
     public void transform() {
+        // I plan to use the health system for combat
         if (getHealth() <= 0) {
-            System.out.println(getName() + " you are dead! You cannot transform.\n");
+            System.out.printf("%s dang bro you cant transform you are dead!\n", getName());
         } else if (transformed) {
-            System.out.println(getName() + " is transformed back into a vampire!\n");
-            setName(getName().replace("Bat-", ""));
-            setHealth(getHealth() + 10);
+            System.out.printf("%s is transformed back into a werewolf!\n", getName());
+            setHealth(getHealth() + 69);
             transformed = false;
         } else {
-            System.out.println(getName() + " transforms into a bat!\n");
-            setName("Bat-" + getName());
-            setHealth(getHealth() - 10);
+            System.out.printf("%s transformed into flight form\n", getName());
+            setHealth(getHealth() - 69);
             transformed = true;
         }
     }

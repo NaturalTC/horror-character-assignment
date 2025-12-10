@@ -1,5 +1,7 @@
 import model.*;
 import interfaces.Transformable;
+
+import javax.xml.crypto.dsig.Transform;
 import java.util.*;
 
 /*
@@ -81,32 +83,24 @@ public class HorrorCharacterApp {
         // Demonstrate polymorphism and method overriding
         System.out.println("\nDemonstrating inheritance:\n");
         for (HorrorCharacter hc : horrorList) {
-            System.out.println(hc.getName() + " attacks:");
+            System.out.printf("%s attacks: ", hc.getName());
             hc.attack();
-            System.out.println(hc.getName() + " flees:");
+            System.out.printf("%s flees: ", hc.getName());
             hc.flee();
 
             // Prints the vulnerabilities if the character has them
-            System.out.println(hc.getName() + " vulnerabilities:");
+            System.out.printf("%s vulnerabilities:\n", hc.getName());
             for (Vulnerability v : hc.getVulnerabilities()) {
                 System.out.println("- " + v);
             }
-            System.out.println("\n");
 
-            // If the character is transformable, demonstrate transformation
-            if (hc instanceof Transformable t) {
-                System.out.println(hc.getName() + " transforms:");
-                t.transform();
-                System.out.println(hc.getName() + " attacks after transforming:");
-                hc.attack();
-
-                // Transform back logic can be uncommented if needed
-//                System.out.println(hc.getName() + " transforms back:");
-//                t.transform();
-//                System.out.println(hc.getName() + " attacks after transforming back:");
-//                hc.attack();
+            // transform Pattern Matching
+            if (hc instanceof Transformable transformableHc)
+            {
+                System.out.println("\n");
+                transformableHc.transform();
             }
-
+            
             // Clean up print statements
             System.out.println("---\n");
         }
